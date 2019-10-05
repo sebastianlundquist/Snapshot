@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "480193649683",
+    "firebase_url": "https://snapshot-28296.firebaseio.com",
+    "project_id": "snapshot-28296",
+    "storage_bucket": "snapshot-28296.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480193649683:android:38f85331a92571549f33e6",
+        "android_client_info": {
+          "package_name": "com.sebastianlundquist.snapshot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "480193649683-m34jbrnq6h2id5ictrn5c9u5bnkg9j4s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQDkztxJkohjxk8oACVKf7HFo80_v4t7E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "480193649683-m34jbrnq6h2id5ictrn5c9u5bnkg9j4s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
