@@ -11,6 +11,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnKeyListener {
 
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnKeyListen
                 mAuth.createUserWithEmailAndPassword(emailInput.text.toString(), passwordInput.text.toString())
                         .addOnCompleteListener(this) { task ->
                             if (task.isSuccessful) {
+                                FirebaseDatabase.getInstance().reference.child("users").child(task.result!!.user?.uid!!).child("email").setValue(emailInput.text.toString())
                                 login()
                             } else {
                                 Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
