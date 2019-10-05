@@ -51,6 +51,11 @@ class CreateSnapActivity : AppCompatActivity() {
                 if (uploadTask.isSuccessful) {
                     url = downloadUrl.result.toString()
                     Log.i("Url", url)
+                    val intent = Intent(this, ChooseUserActivity::class.java)
+                    intent.putExtra("imageURL", url.toString())
+                    intent.putExtra("imageName", imageName)
+                    intent.putExtra("message", messageEditText?.text.toString())
+                    startActivity(intent)
                 }
                 else {
                     Toast.makeText(this, uploadTask.exception?.message, Toast.LENGTH_SHORT).show()
