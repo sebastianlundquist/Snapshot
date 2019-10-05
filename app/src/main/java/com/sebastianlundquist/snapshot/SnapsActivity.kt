@@ -37,15 +37,26 @@ class SnapsActivity : AppCompatActivity() {
                 adapter.notifyDataSetChanged()
             }
 
+            override fun onChildRemoved(p0: DataSnapshot) {
+                var index = 0
+                for (snap : DataSnapshot in snaps) {
+                    if (snap.key == p0.key) {
+                        snaps.removeAt(index)
+                        emails.removeAt(index)
+                    }
+                    index++
+                }
+                adapter.notifyDataSetChanged()
+            }
+
             override fun onCancelled(p0: DatabaseError) {}
             override fun onChildMoved(p0: DataSnapshot, p1: String?) {}
             override fun onChildChanged(p0: DataSnapshot, p1: String?) {}
-            override fun onChildRemoved(p0: DataSnapshot) {}
         })
 
         snapsListView?.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, i, l ->
             val snapshot = snaps[i]
-            var intent = Intent(this, ViewSnapActivity::class.java)
+            val intent = Intent(this, ViewSnapActivity::class.java)
             intent.putExtra("imageName", snapshot.child("imageName").value as String)
             intent.putExtra("imageURL", snapshot.child("imageURL").value as String)
             intent.putExtra("message", snapshot.child("message").value as String)
