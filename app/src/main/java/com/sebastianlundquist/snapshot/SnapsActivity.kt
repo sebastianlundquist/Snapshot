@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import com.google.firebase.auth.FirebaseAuth
@@ -18,6 +19,7 @@ class SnapsActivity : AppCompatActivity() {
     val mAuth = FirebaseAuth.getInstance()
     var snapsListView : ListView? = null
     var emails : ArrayList<String> = ArrayList()
+    var snaps : ArrayList<DataSnapshot> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +33,7 @@ class SnapsActivity : AppCompatActivity() {
         FirebaseDatabase.getInstance().reference.child("users").child(mAuth.currentUser!!.uid).child("snaps").addChildEventListener(object : ChildEventListener {
             override fun onChildAdded(p0: DataSnapshot, p1: String?) {
                 emails.add(p0.child("from").value as String)
+                snaps.add(p0)
                 adapter.notifyDataSetChanged()
             }
 
@@ -38,8 +41,17 @@ class SnapsActivity : AppCompatActivity() {
             override fun onChildMoved(p0: DataSnapshot, p1: String?) {}
             override fun onChildChanged(p0: DataSnapshot, p1: String?) {}
             override fun onChildRemoved(p0: DataSnapshot) {}
-
         })
+
+        snapsListView?.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, i, l ->
+            val snapshot = snaps[i]
+            var intent = Intent(this, ViewSnapActivity::class.java)
+            intent.putExtra("imageName", snapshot.child("imageName").value as String)
+            intent.putExtra("imageURL", snapshot.child("imageURL").value as String)
+            intent.putExtra("message", snapshot.child("message").value as String)
+            intent.putExtra("snapKey", snapshot.key)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

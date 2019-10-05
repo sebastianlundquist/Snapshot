@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="#3305AAF5" />
 
     <EditText
         android:id="@+id/messageEditText"
@@ -39,7 +39,7 @@
         android:id="@+id/chooseImageButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:onClick="chooseImageClicked"
         android:text="@string/choose_image"
@@ -58,7 +58,7 @@
         android:id="@+id/nextButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:onClick="nextClicked"
         android:text="@string/next"
