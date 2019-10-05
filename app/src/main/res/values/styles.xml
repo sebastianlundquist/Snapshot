@@ -1,0 +1,17 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:editTextColor">#FFFFFF</item>
+        <item name="android:textColorPrimary">#000000</item>
+        <item name="android:textColorSecondary">#803F3F</item>
+        <item name="android:textColorTertiary">#2196F3</item>
+        <item name="android:textColorPrimaryInverse">#FF5722</item>
+        <item name="android:textColorSecondaryInverse">#8BC34A</item>
+        <item name="android:textColorTertiaryInverse">#009688</item>
+        <item name="android:textColorHint">#BDBDBD</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="titleTextColor">#000000</item>
+        <item name="backgroundTint">@color/colorPrimary</item>
+    </style>
+</resources>
