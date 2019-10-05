@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">Snapshot</string>
     <string name="login_title">Snapshot: Login</string>
-    <string name="users_title">Snapshot: Users</string>
+    <string name="feed_title">Snapshot: Snaps</string>
     <string name="create_snap_title">Snapshot: Create Snap</string>
+    <string name="send_snap_title">Snapshot: Send Snap</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="sign_up">Sign Up</string>
