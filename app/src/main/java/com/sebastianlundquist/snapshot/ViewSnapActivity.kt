@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -14,6 +17,7 @@ class ViewSnapActivity : AppCompatActivity() {
 
     var messageTextView : TextView? = null
     var snapImageView : ImageView? = null
+    var mAuth = FirebaseAuth.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +37,12 @@ class ViewSnapActivity : AppCompatActivity() {
         catch (e : Exception) {
             e.printStackTrace()
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        FirebaseDatabase.getInstance().reference.child("users").child(mAuth.currentUser!!.uid).child("snaps").child(intent.getStringExtra("snapKey")).removeValue()
+        FirebaseStorage.getInstance().reference.child("images").child(intent.getStringExtra("imageName")).delete()
     }
 
     class ImageDownloader : AsyncTask<String, Void, Bitmap>() {
