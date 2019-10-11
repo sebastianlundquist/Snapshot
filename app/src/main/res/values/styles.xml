@@ -2,11 +2,11 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:editTextColor">#FFFFFF</item>
         <item name="android:textColorPrimary">#000000</item>
-        <item name="android:textColorSecondary">#803F3F</item>
-        <item name="android:textColorTertiary">#2196F3</item>
-        <item name="android:textColorPrimaryInverse">#FF5722</item>
-        <item name="android:textColorSecondaryInverse">#8BC34A</item>
-        <item name="android:textColorTertiaryInverse">#009688</item>
+        <item name="android:textColorSecondary">#000000</item>
+        <item name="android:textColorTertiary">#000000</item>
+        <item name="android:textColorPrimaryInverse">#FFFFFF</item>
+        <item name="android:textColorSecondaryInverse">#FFFFFF</item>
+        <item name="android:textColorTertiaryInverse">#FFFFFF</item>
         <item name="android:textColorHint">#BDBDBD</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -17,8 +17,8 @@
     </style>
 
     <style name="AppTheme.ActionBarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
-        <item name="colorControlNormal">#000000</item> <!-- sets the color for the back arrow -->
-        <item name="actionOverflowButtonStyle">@style/actionOverflowButtonStyle</item> <!-- sets the style for the overflow button -->
+        <item name="colorControlNormal">#000000</item>
+        <item name="actionOverflowButtonStyle">@style/actionOverflowButtonStyle</item>
     </style>
 
     <style name="actionOverflowButtonStyle" parent="@style/Widget.AppCompat.ActionButton.Overflow">
